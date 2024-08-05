@@ -13,6 +13,7 @@ function create(tag) {
     const removeBtn = document.createElement('button');
     removeBtn.textContent = 'x';
     removeBtn.classList.add('removeBtn');
+    chipEl.appendChild(removeBtn);
 
     removeBtn.addEventListener('click', func);
 
@@ -20,7 +21,6 @@ function create(tag) {
         chipEl.parentNode.removeChild(chipEl);
     }
 
-    chipEl.appendChild(removeBtn);
     return chipEl;
 }
 
