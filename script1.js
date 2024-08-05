@@ -30,7 +30,6 @@ function addTag() {
         const chipEl = create(tag);
         list.appendChild(chipEl);
         inputEl.value = '';
-        inputEl.focus();
     }
 }
 
