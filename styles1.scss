@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    width: 400px;
+    width: 500px;
     margin: 0 auto;
     padding: 8px;
     border: 1px solid #ccc;
@@ -21,20 +21,22 @@
         border: none;
         outline: none;
         margin: 4px 0;
+        font-size: 15px;
     }
 
 
     &__btn{
         margin-left: 8px;
-        padding: 8px 12px;
+        padding: 8px 25px;
         background-color: #28a745;
         color: white;
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        font-size: 15px;
 
         &:hover {
-            background-color: #218838;
+            background-color: #353333;
         }
     }
 }
