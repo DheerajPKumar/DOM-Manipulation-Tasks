@@ -19,7 +19,7 @@ body {
   margin-top: 10px;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 800px;
 }
@@ -30,13 +30,12 @@ body {
 
 .formContainer label {
   margin-bottom: 8px;
-  font-weight: bold;
+  font-weight: 600;
   margin-left: 10px;
 }
 
 .formContainer input,
-.formContainer select,
-.formContainer textarea {
+.formContainer select {
   margin-bottom: 16px;
   padding: 8px;
   border: 1px solid #ddd;
@@ -49,24 +48,27 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 10px 20px;
-  background-color: #007BFF;
+  background-color: #454647;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+.generateBtn:hover {
+  background-color: rgb(18, 17, 17);
 }
 
 .formContainer button {
   padding: 10px 20px;
-  background-color: #007BFF;
+  background-color: #454647;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   margin-left: 10px;
 }
-
 .formContainer button:hover {
-  background-color: #0056b3;
+  background-color: rgb(18, 17, 17);
 }/*# sourceMappingURL=styles3.css.map */
