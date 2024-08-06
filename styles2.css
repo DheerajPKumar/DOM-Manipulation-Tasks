@@ -28,13 +28,56 @@ body {
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .container__search {
+  width: 100%;
   outline: none;
   border: 1px solid #424141;
   padding: 4px 10px;
   border-radius: 5px;
   font-size: 16px;
+}
+
+.list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  list-style: none;
+  margin: 2px 0;
+  padding: 2px 0;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.list::-webkit-scrollbar-track {
+  background-color: rgb(42, 42, 42);
+  border-radius: 4px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: rgb(82, 81, 81);
+  border-radius: 4px;
+}
+
+.individualList {
+  padding: 10px;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.individualList:hover {
+  background-color: #ccc;
 }/*# sourceMappingURL=styles2.css.map */
