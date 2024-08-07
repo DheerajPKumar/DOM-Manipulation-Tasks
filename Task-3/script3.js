@@ -65,16 +65,15 @@ function createForm(formDetails) {
         const divEl = document.createElement('div');
         if (detail.label) {
             const label = document.createElement('label');
-            label.setAttribute('for', detail.id || detail.name);
+            label.setAttribute('for', detail.id);
             label.textContent = detail.label;
             divEl.appendChild(label);
-            // formEl.appendChild(divEl);
         }
 
         let inputEl;
         if (detail.type === 'select') {
             inputEl = document.createElement('select');
-            inputEl.setAttribute('id', detail.id || detail.name);
+            inputEl.setAttribute('id', detail.id);
             inputEl.setAttribute('name', detail.name);
             if(detail.required === "true"){
                 inputEl.setAttribute('required', '');
