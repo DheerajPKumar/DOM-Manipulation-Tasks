@@ -5,7 +5,7 @@ const formDetails = [
       name: "full_name",
       maxLength: "25",
       minLength: "3",
-      pattern: "",
+      pattern: "[a-zA-Z]+",
       placeholder: "Enter Your Full Name",
       required: "true",
       value: "",
@@ -17,7 +17,7 @@ const formDetails = [
       name: "email",
       maxLength: "30",
       minLength: "10",
-      pattern: "",
+      pattern: "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+",
       placeholder: "Enter Your Email Address",
       required: "true",
       value: "",
@@ -48,7 +48,6 @@ const formDetails = [
       value: "delhi",
       label: "Enter Your City: ",
       options: [
-        { label: "Select City" },
         { label: "Delhi", value: "delhi" },
         { label: "Mumbai", value: "mumbai" },
         { label: "UP", value: "Up" },
@@ -63,36 +62,56 @@ function createForm(formDetails) {
     const formEl = document.createElement('form');
     
     formDetails.forEach(detail => {
+        const divEl = document.createElement('div');
         if (detail.label) {
-            const labelEl = document.createElement('label');
-            labelEl.setAttribute('for', detail.id || detail.name);
-            labelEl.textContent = detail.label;
-            formEl.appendChild(labelEl);
+            const label = document.createElement('label');
+            label.setAttribute('for', detail.id || detail.name);
+            label.textContent = detail.label;
+            divEl.appendChild(label);
+            // formEl.appendChild(divEl);
         }
 
         let inputEl;
-        inputEl = document.createElement('input');
-        inputEl.setAttribute('type', detail.type);
-        inputEl.setAttribute('id', detail.id);
-        inputEl.setAttribute('name', detail.name);
-        if(detail.maxLength){
-            inputEl.setAttribute('maxlength', detail.maxLength);
-        }
-        if(detail.minLength){
-            inputEl.setAttribute('minlength', detail.minLength);
-        }
-        if(detail.pattern){
-            inputEl.setAttribute('pattern', detail.pattern);
-        }
-        if(detail.placeholder){
-            inputEl.setAttribute('placeholder', detail.placeholder);
-        }
-        if(detail.required === "true"){
-            inputEl.setAttribute('required', '');
-        }
-        inputEl.setAttribute('value', detail.value);
+        if (detail.type === 'select') {
+            inputEl = document.createElement('select');
+            inputEl.setAttribute('id', detail.id || detail.name);
+            inputEl.setAttribute('name', detail.name);
+            if(detail.required === "true"){
+                inputEl.setAttribute('required', '');
+            }
 
-        formEl.appendChild(inputEl);
+            detail.options.forEach(option => {
+                const optionEl = document.createElement('option');
+                optionEl.setAttribute('value', option.value);
+                optionEl.textContent = option.label;
+                inputEl.appendChild(optionEl);
+            });        
+        }
+        else{
+            inputEl = document.createElement('input');
+            inputEl.setAttribute('type', detail.type);
+            inputEl.setAttribute('id', detail.id);
+            inputEl.setAttribute('name', detail.name);
+            if(detail.maxLength){
+                inputEl.setAttribute('maxlength', detail.maxLength);
+            }
+            if(detail.minLength){
+                inputEl.setAttribute('minlength', detail.minLength);
+            }
+            if(detail.pattern){
+                inputEl.setAttribute('pattern', detail.pattern);
+            }
+            if(detail.placeholder){
+                inputEl.setAttribute('placeholder', detail.placeholder);
+            }
+            if(detail.required === "true"){
+                inputEl.setAttribute('required', '');
+            }
+            inputEl.setAttribute('value', detail.value);
+        }
+
+        divEl.appendChild(inputEl);
+        formEl.appendChild(divEl);
     });
 
     const submitBtn = document.createElement('button');
