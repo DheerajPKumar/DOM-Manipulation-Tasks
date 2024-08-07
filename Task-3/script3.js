@@ -37,7 +37,7 @@ const formDetails = [
       label: "Password: ",
     },
     { type: "date", id: "date", name: "dob", max: "", min: "", placeholder: "", required: "true", value: "", label: "Enter Date of Birth: " },
-    { type: "number", id: "marks", name: "marks", min: "10", max: "15", placeholder: "+91-0123456789", required: "true", value: "", label: "Enter Mobile No.: " },
+    { type: "number", id: "marks", name: "marks", min: "0", max: "100", placeholder: "", required: "true", value: "", label: "Enter Marks: " },
     { type: "radio", id: "gender1", name: "gender", required: "true", checked: "", value: "Male", label: "Male" },
     { type: "radio", id: "gender2", name: "gender", required: "true", checked: "", value: "Female", label: "Female" },
     {
